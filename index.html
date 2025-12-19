@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Merry Christmas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1 id="title">MERRY CHRISTMAS</h1>
+
+    <div id="canvas-container"></div>
+
+    <div id="heart-message">tui cũng iu b 💖</div>
+
+    <div class="gift-area" id="gift-container">
+        <div class="gift" onclick="openGift(0)">🎁</div>
+        <div class="gift" onclick="openGift(1)">🎁</div>
+        <div class="gift" onclick="openGift(2)">🎁</div>
+        <div class="gift" onclick="openGift(3)">🎁</div>
+        <div class="gift" onclick="openGift(4)">🎁</div>
+        <div class="gift" onclick="openGift(5)" id="final-gift">💝</div>
+    </div>
+
+    <div id="letter-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeLetter()">&times;</span>
+            <p id="letter-text"></p>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+body {
+    margin: 0; padding: 0;
+    background-color: #000; color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow: hidden;
+}
+
+#title {
+    position: absolute; top: 5%; width: 100%; text-align: center;
+    color: #ffcc00; text-shadow: 0 0 20px #ffcc00; letter-spacing: 5px; z-index: 10;
+}
+
+/* Hiệu ứng chữ nhấp nháy */
+@keyframes blink {
+    0% { opacity: 1; text-shadow: 0 0 20px #ff69b4; }
+    50% { opacity: 0.5; text-shadow: 0 0 5px #ff69b4; }
+    100% { opacity: 1; text-shadow: 0 0 20px #ff69b4; }
+}
+
+#heart-message {
+    position: absolute; top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3rem; color: #ff69b4;
+    /* text-shadow line này sẽ được thay thế bởi animation */
+    display: none; /* Mặc định ẩn */
+    z-index: 100;
+    white-space: nowrap;
+}
+
+/* Class này sẽ được thêm vào bằng JS khi bắn tim */
+.blinking {
+    display: block !important;
+    animation: blink 1s infinite; /* Nhấp nháy liên tục */
+}
+
+.gift-area {
+    position: absolute; bottom: 50px; width: 100%;
+    display: flex; justify-content: center; gap: 30px; z-index: 10;
+}
+
+.gift {
+    font-size: 40px; cursor: pointer; text-align: center; transition: transform 0.3s, opacity 0.5s;
+}
+.gift:hover { transform: scale(1.2); }
+.gift.opened { opacity: 0.3; transform: scale(0.8); pointer-events: none; }
+
+/* Modal thư */
+.modal {
+    display: none; position: fixed; z-index: 1000; left: 0; top: 0;
+    width: 100%; height: 100%; background-color: rgba(0,0,0,0.8); backdrop-filter: blur(5px);
+}
+.modal-content {
+    background: #fff0f0; color: #333; margin: 15% auto; padding: 30px;
+    border: 2px solid #ff69b4; width: 80%; max-width: 500px;
+    border-radius: 15px; position: relative; box-shadow: 0 0 30px rgba(255, 105, 180, 0.5);
+    line-height: 1.6; font-size: 1.1rem;
+}
+.close {
+    position: absolute; right: 15px; top: 10px; font-size: 28px; cursor: pointer; color: #ff69b4;
+}
